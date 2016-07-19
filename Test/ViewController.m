@@ -37,15 +37,34 @@
 - (IBAction)save:(id)sender
 {
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
-    [object setValue:nameTF.text forKey:@"name"];
-    [object setValue:[NSNumber numberWithInteger:[contactTF.text intValue]] forKey:@"contact"];
-    [object setValue:[NSNumber numberWithInteger:[idTF.text intValue]] forKey:@"id"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
+    NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
+    BOOL found = NO;
+    for(NSManagedObject *object in list)
+    {
+        if([[object valueForKey:@"id"] isEqualToString:idTF.text])
+        {
+            found = YES;
+            [object setValue:nameTF.text forKey:@"name"];
+            [object setValue:contactTF.text forKey:@"contact"];
+            [object setValue:idTF.text forKey:@"id"];
+        }
+    }
+    
+    if(!found)
+    {
+        NSManagedObject *newObject = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:context];
+        [newObject setValue:nameTF.text forKey:@"name"];
+        [newObject setValue:contactTF.text forKey:@"contact"];
+        [newObject setValue:idTF.text forKey:@"id"];
+    }
     
     NSError *error = nil;
     [context save:&error];
     if(error)
         NSLog(@"error - %@",[error localizedDescription]);
+    else
+        NSLog(@"%@ Successfully",found?@"Updated":@"Added");
 }
 
 - (IBAction)get:(id)sender
@@ -56,8 +75,31 @@
     NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
     for(NSManagedObject *object in list)
     {
-        NSLog(@"employee name - %@\nemployee contact - %@\nemployee id - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
+        NSLog(@"\nEmployee Name - %@\nEmployee Contact - %@\nEmployee ID - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
     }
+}
+
+- (IBAction)delete:(id)sender
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
+    NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
+    BOOL found = NO;
+    for(NSManagedObject *object in list)
+    {
+        if([[object valueForKey:@"id"] isEqualToString:idTF.text])
+        {
+            found = YES;
+            [context deleteObject:object];
+        }
+    }
+    NSError *error = nil;
+    [context save:&error];
+    if(error)
+        NSLog(@"error - %@",[error localizedDescription]);
+    else
+        NSLog(@"%@",found?@"Deleted Successfully":@"ID not found");
+
 }
 
 @end

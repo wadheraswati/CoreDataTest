@@ -48,7 +48,7 @@
         return persistentStoreCoordinator;
     }
     NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory]
-                                               stringByAppendingPathComponent: @"Data.sqlite"]];
+                                               stringByAppendingPathComponent: @"NewData.sqlite"]];
     NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
                                   initWithManagedObjectModel:[self managedObjectModel]];

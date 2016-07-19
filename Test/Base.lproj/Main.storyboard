@@ -90,6 +90,13 @@
                                     <action selector="get:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="RkX-G0-gC2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgK-Lt-FKk">
+                                <rect key="frame" x="87" y="408" width="147" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="delete:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="eax-sB-aAO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
