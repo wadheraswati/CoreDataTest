@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+
 
 @interface ViewController : UIViewController
+{
+    IBOutlet UITextField *nameTF;
+    IBOutlet UITextField *contactTF;
+    IBOutlet UITextField *idTF;
+}
 
+- (NSManagedObjectContext *) managedObjectContext;
 
 @end
 

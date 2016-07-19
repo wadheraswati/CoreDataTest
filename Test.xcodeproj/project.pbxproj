@@ -13,6 +13,9 @@
 		D91308721D3E1AAB003CA941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91308701D3E1AAB003CA941 /* Main.storyboard */; };
 		D91308741D3E1AAB003CA941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91308731D3E1AAB003CA941 /* Assets.xcassets */; };
 		D91308771D3E1AAB003CA941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91308751D3E1AAB003CA941 /* LaunchScreen.storyboard */; };
+		D91308891D3E1B9B003CA941 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91308881D3E1B9B003CA941 /* Main_iPad.storyboard */; };
+		D9B110351D3E290B002D5FA8 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9B110331D3E290B002D5FA8 /* Data.xcdatamodeld */; };
+		D9B110371D3E2BCA002D5FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B110361D3E2BCA002D5FA8 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D91308731D3E1AAB003CA941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D91308761D3E1AAB003CA941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D91308781D3E1AAB003CA941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D91308881D3E1B9B003CA941 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		D9B110341D3E290B002D5FA8 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		D9B110361D3E2BCA002D5FA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B110371D3E2BCA002D5FA8 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 		D913085B1D3E1AAB003CA941 = {
 			isa = PBXGroup;
 			children = (
+				D9B110361D3E2BCA002D5FA8 /* CoreData.framework */,
 				D91308661D3E1AAB003CA941 /* Test */,
 				D91308651D3E1AAB003CA941 /* Products */,
 			);
@@ -67,6 +75,8 @@
 				D91308751D3E1AAB003CA941 /* LaunchScreen.storyboard */,
 				D91308781D3E1AAB003CA941 /* Info.plist */,
 				D91308671D3E1AAB003CA941 /* Supporting Files */,
+				D91308881D3E1B9B003CA941 /* Main_iPad.storyboard */,
+				D9B110331D3E290B002D5FA8 /* Data.xcdatamodeld */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D91308771D3E1AAB003CA941 /* LaunchScreen.storyboard in Resources */,
+				D91308891D3E1B9B003CA941 /* Main_iPad.storyboard in Resources */,
 				D91308741D3E1AAB003CA941 /* Assets.xcassets in Resources */,
 				D91308721D3E1AAB003CA941 /* Main.storyboard in Resources */,
 			);
@@ -152,6 +163,7 @@
 				D913086F1D3E1AAB003CA941 /* ViewController.m in Sources */,
 				D913086C1D3E1AAB003CA941 /* AppDelegate.m in Sources */,
 				D91308691D3E1AAB003CA941 /* main.m in Sources */,
+				D9B110351D3E290B002D5FA8 /* Data.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +314,22 @@
 				D913087D1D3E1AAB003CA941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9B110331D3E290B002D5FA8 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9B110341D3E290B002D5FA8 /* Data.xcdatamodel */,
+			);
+			currentVersion = D9B110341D3E290B002D5FA8 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D913085C1D3E1AAB003CA941 /* Project object */;
 }
