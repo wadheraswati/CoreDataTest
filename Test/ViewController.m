@@ -16,14 +16,29 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
-    NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
-    NSManagedObject *object = [context existingObjectWithID:[(NSManagedObject *)[list objectAtIndex:2] objectID] error:nil];
-    NSLog(@"\nEmployee Name - %@\nEmployee Contact - %@\nEmployee ID - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
     
+    [self getObjectWithProperty:nil andValue:nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)getObjectWithObjectID:(NSManagedObjectID *)objectID
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    //NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
+    NSManagedObject *object = [context existingObjectWithID:objectID error:nil];
+    NSLog(@"\nEmployee Name - %@\nEmployee Contact - %@\nEmployee ID - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
+}
+
+- (void)getObjectWithProperty:(NSString *)key andValue:(NSString *)value
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == 1"];
+    [request setPredicate:predicate];
+    NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
+    NSManagedObject *object = [list lastObject];
+    NSLog(@"\nEmployee Name - %@\nEmployee Contact - %@\nEmployee ID - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
 }
 
 - (void)didReceiveMemoryWarning {
