@@ -76,15 +76,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-td-aMD">
+                                <rect key="frame" x="103" y="239" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P07-nS-mW5">
+                                <rect key="frame" x="42" y="243" width="26" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj4-Wt-Znt">
-                                <rect key="frame" x="87" y="287" width="147" height="30"/>
+                                <rect key="frame" x="7" y="278" width="111" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="save:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="qMM-JC-DxS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-1r-ev0">
-                                <rect key="frame" x="87" y="347" width="147" height="30"/>
+                                <rect key="frame" x="207" y="278" width="113" height="30"/>
                                 <state key="normal" title="Get"/>
                                 <connections>
                                     <action selector="get:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="RkX-G0-gC2"/>
@@ -97,12 +108,20 @@
                                     <action selector="delete:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="eax-sB-aAO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-7q-ho2">
+                                <rect key="frame" x="105" y="339" width="111" height="30"/>
+                                <state key="normal" title="Save Company"/>
+                                <connections>
+                                    <action selector="addCompany:" destination="YSd-Jm-VVt" eventType="touchUpInside" id="T4h-nR-W5D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="contactTF" destination="UhO-sB-7kr" id="5RW-7l-cGy"/>
+                        <outlet property="eidTF" destination="gaK-td-aMD" id="Jw4-3O-CF0"/>
                         <outlet property="idTF" destination="RXk-Gk-YqN" id="5Eb-2E-43T"/>
                         <outlet property="nameTF" destination="kA2-RA-XMw" id="OJA-vM-xO5"/>
                     </connections>

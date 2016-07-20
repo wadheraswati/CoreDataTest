@@ -15,6 +15,8 @@
     IBOutlet UITextField *nameTF;
     IBOutlet UITextField *contactTF;
     IBOutlet UITextField *idTF;
+    IBOutlet UITextField *eidTF;
+
 }
 
 - (NSManagedObjectContext *) managedObjectContext;

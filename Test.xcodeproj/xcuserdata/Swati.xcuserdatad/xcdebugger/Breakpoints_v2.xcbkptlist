@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Test/ViewController.m"
-            timestampString = "490621764.560617"
+            timestampString = "490684839.466807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-save:"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-addCompany:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
