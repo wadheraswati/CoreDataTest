@@ -16,6 +16,12 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
+    NSArray *list = [[context executeFetchRequest:request error:nil] mutableCopy];
+    NSManagedObject *object = [context existingObjectWithID:[(NSManagedObject *)[list objectAtIndex:2] objectID] error:nil];
+    NSLog(@"\nEmployee Name - %@\nEmployee Contact - %@\nEmployee ID - %@", [object valueForKey:@"name"], [object valueForKey:@"contact"], [object valueForKey:@"id"]);
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
